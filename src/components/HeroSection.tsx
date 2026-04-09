@@ -81,11 +81,15 @@ const [selectedOption, setSelectedOption] = useState("");
             <input type="hidden" name="_template" value="table" />
 
             <div>
-              <label className="block text-sm font-medium mb-1.5 text-foreground">Full Name</label>
+              <label className="block text-sm font-medium mb-1.5 text-foreground">
+                Full Name (First & Last)
+              </label>
               <input
                 type="text"
                 name="full_name"
                 placeholder="Juan Dela Cruz"
+                pattern="^[A-Za-z]+(?:[ '-][A-Za-z]+)+$"
+                title="Please enter your full name (first and last name)"
                 className="w-full px-4 py-3 rounded-lg bg-secondary border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition"
                 required
               />
