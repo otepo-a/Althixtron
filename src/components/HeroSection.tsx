@@ -1,8 +1,11 @@
 import { motion } from "framer-motion";
+import { useState } from "react";
 import { Phone, MapPin, Clock } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 
 const HeroSection = () => {
+const [inquiryType, setInquiryType] = useState("");
+const [selectedOption, setSelectedOption] = useState("");
   return (
     <section id="contact" className="relative min-h-screen flex items-center pt-20">
       {/* Background */}
@@ -65,7 +68,7 @@ const HeroSection = () => {
         >
           <h2 className="text-2xl font-display font-bold mb-2">Get a Free Quote</h2>
           <p className="text-muted-foreground text-sm mb-6">
-            Tell us what you need and we'll get back to you within 24 hours.
+            Select service or product to see available options.
           </p>
           <form
             className="space-y-4"
@@ -89,37 +92,97 @@ const HeroSection = () => {
             </div>
 
             <div>
-              <label className="block text-sm font-medium mb-1.5 text-foreground">Phone / Email</label>
+              <label className="block text-sm font-medium mb-1.5 text-foreground">
+                Phone Number
+              </label>
               <input
-                type="text"
+                type="tel"
                 name="contact_info"
-                placeholder="09XX XXX XXXX or email@example.com"
+                placeholder="09XX XXX XXXX"
+                pattern="^09\d{9}$"
+                title="Please enter a valid 11-digit phone number starting with 09"
                 className="w-full px-4 py-3 rounded-lg bg-secondary border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition"
                 required
               />
             </div>
 
+            {/* Inquiry Type */}
             <div>
-              <label className="block text-sm font-medium mb-1.5 text-foreground">Service Needed</label>
+              <label className="block text-sm font-medium mb-1.5 text-foreground">
+                Inquiry Type
+              </label>
               <select
-                name="service_needed"
+                name="inquiry_type"
+                value={inquiryType}
+                onChange={(e) => {
+                  setInquiryType(e.target.value);
+                  setSelectedOption("");
+                }}
                 className="w-full px-4 py-3 rounded-lg bg-secondary border border-border text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition"
                 required
               >
-                <option value="">Select a service</option>
-                <option>Structured Cabling</option>
-                <option>Two-Way Radio Systems</option>
-                <option>Data & Command Network</option>
-                <option>Solar Technology</option>
-                <option>FDAS</option>
-                <option>Audio & Video Systems</option>
-                <option>CCTV & Security Systems</option>
-                <option>Network & ICT Solutions</option>
-                <option>Software & Licenses</option>
-                <option>Computer Supply & Maintenance</option>
-                <option>Other</option>
+                <option value="">Select category</option>
+                <option value="Service">Service</option>
+                <option value="Product">Product</option>
               </select>
             </div>
+
+            {/* SERVICE DROPDOWN */}
+            {inquiryType === "Service" && (
+              <div>
+                <label className="block text-sm font-medium mb-1.5 text-foreground">
+                  Service Needed
+                </label>
+                <select
+                  name="selected_item"
+                  value={selectedOption}
+                  onChange={(e) => setSelectedOption(e.target.value)}
+                  className="w-full px-4 py-3 rounded-lg bg-secondary border border-border text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition"
+                  required
+                >
+                  <option value="">Select a service</option>
+                  <option>Structured Cabling</option>
+                  <option>Two-Way Radio Systems</option>
+                  <option>Data & Command Network</option>
+                  <option>Solar Technology</option>
+                  <option>FDAS</option>
+                  <option>Audio & Video Systems</option>
+                  <option>CCTV & Security Systems</option>
+                  <option>Network & ICT Solutions</option>
+                  <option>Software & Licenses</option>
+                  <option>Computer Supply & Maintenance</option>
+                  <option>Other Service</option>
+                </select>
+              </div>
+            )}
+
+            {/* PRODUCT DROPDOWN */}
+            {inquiryType === "Product" && (
+              <div>
+                <label className="block text-sm font-medium mb-1.5 text-foreground">
+                  Product Needed
+                </label>
+                <select
+                  name="selected_item"
+                  value={selectedOption}
+                  onChange={(e) => setSelectedOption(e.target.value)}
+                  className="w-full px-4 py-3 rounded-lg bg-secondary border border-border text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition"
+                  required
+                >
+                  <option value="">Select a product</option>
+                  <option>Two-Way Radios</option>
+                  <option>CCTV Cameras</option>
+                  <option>NVR / DVR</option>
+                  <option>Routers / Switches</option>
+                  <option>Laptops / Computers</option>
+                  <option>Printers</option>
+                  <option>FDAS Devices</option>
+                  <option>Solar Panels</option>
+                  <option>Batteries / Power Supply</option>
+                  <option>Accessories</option>
+                </select>
+              </div>
+            )}
 
             <div>
               <label className="block text-sm font-medium mb-1.5 text-foreground">Message</label>
