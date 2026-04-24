@@ -8,12 +8,14 @@ import FAQSection from "@/components/FAQSection";
 import MapSection from "@/components/MapSection";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
+import LogoSlider from "@/components/LogoSlider";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
       <HeroSection />
+      <LogoSlider />
       <ServicesSection />
       <WhyUsSection />
       <GallerySection />
