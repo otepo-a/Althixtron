@@ -1,5 +1,6 @@
 import { motion, useAnimationControls } from "framer-motion";
 import atxlogo from "../assets/atx.png";
+import motorola from "../assets/motorola.png";
 
 const logos = [
   { id: 1, src: atxlogo, alt: "ATX" },
@@ -8,11 +9,11 @@ const logos = [
     src: "https://static.wixstatic.com/media/d82457_0ee0f313b3f24f35a5d0a7515ca263b6~mv2.png/v1/fill/w_143,h_26,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/cignus-logo.png",
     alt: "Cignus",
   },
-  { id: 3, src: atxlogo, alt: "ATX" },
+  { id: 3, src: motorola, alt: "Motorola" },
   {
     id: 4,
-    src: "https://static.wixstatic.com/media/d82457_0ee0f313b3f24f35a5d0a7515ca263b6~mv2.png/v1/fill/w_143,h_26,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/cignus-logo.png",
-    alt: "Cignus",
+    src: "https://www.kenwood.com/content/dam/kenwood/webmaterial/kenwood_logo.svg",
+    alt: "Kenwood",
   },
   { id: 5, src: atxlogo, alt: "ATX" },
   {
@@ -40,7 +41,7 @@ export default function LogoSlider() {
   return (
     <section className="w-full space-y-2 overflow-hidden bg-[#070b12] py-2">
       <div className="mb-8 text-center">
-        <p className="text-sm font-bold uppercase tracking-[0.35em] text-[#1ea7ff]">
+        <p className="text-xs font-bold uppercase tracking-[0.15em] text-[#1ea7ff]">
           TRUSTED TECHNOLOGY PARTNERS
         </p>
 

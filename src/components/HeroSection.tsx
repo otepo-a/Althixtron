@@ -38,7 +38,7 @@ const [selectedOption, setSelectedOption] = useState("");
               Contact Us Today
             </a>
             <a href="#services" className="px-8 py-4 rounded-lg border border-border text-foreground font-semibold text-base hover:bg-secondary transition-colors text-center">
-              Our Services
+              What We Offer
             </a>
           </div>
 
