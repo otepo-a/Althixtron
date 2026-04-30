@@ -2,18 +2,14 @@ import { motion } from "framer-motion";
 import type { LucideIcon } from "lucide-react";
 import {
   Cable,
-  Radio,
   Server,
   Sun,
   Flame,
   Speaker,
   Camera,
   Globe,
-  FileCode,
   Settings,
   AirVent,
-  Monitor,
-  Printer,
 } from "lucide-react";
 
 type SolutionItem = {
@@ -21,39 +17,6 @@ type SolutionItem = {
   title: string;
   desc: string;
 };
-
-const products: SolutionItem[] = [
-  {
-    icon: Monitor,
-    title: "Computer Supply",
-    desc: "Desktop computers, laptops, monitors, peripherals, and business IT hardware solutions.",
-  },
-  {
-    icon: Radio,
-    title: "Two-Way Radios",
-    desc: "Portable radios, repeaters, accessories, and communication equipment for field operations.",
-  },
-  {
-    icon: Camera,
-    title: "CCTV Equipment",
-    desc: "IP cameras, DVR/NVR systems, surveillance accessories, and security hardware.",
-  },
-  {
-    icon: Sun,
-    title: "Solar Products",
-    desc: "Solar panels, inverters, batteries, and renewable energy components.",
-  },
-  {
-    icon: FileCode,
-    title: "Software & Licenses",
-    desc: "Operating systems, office suites, antivirus, and enterprise software licensing.",
-  },
-  {
-    icon: Printer,
-    title: "Office Equipment",
-    desc: "Printers, scanners, consumables, and office productivity devices.",
-  },
-];
 
 const services: SolutionItem[] = [
   {
@@ -65,6 +28,16 @@ const services: SolutionItem[] = [
     icon: Server,
     title: "Data & Network Infrastructure",
     desc: "Enterprise network design, server rooms, command centers, and ICT deployment.",
+  },
+  {
+    icon: Camera,
+    title: "CCTV Installation",
+    desc: "Professional installation of CCTV systems including camera setup, wiring, configuration, and remote monitoring.",
+  },
+  {
+    icon: Sun,
+    title: "Solar Installation",
+    desc: "Complete solar power system installation including panels, inverters, batteries, and system integration.",
   },
   {
     icon: AirVent,
@@ -108,15 +81,11 @@ const ServicesSection = () => {
           </span>
 
           <h2 className="text-3xl md:text-4xl font-display font-bold mt-3">
-            Our <span className="text-gradient">Solutions</span>
+            Our <span className="text-gradient">Services</span>
           </h2>
         </motion.div>
 
-        <SectionBlock title="Products" items={products} />
-
-        <div className="mt-20">
-          <SectionBlock title="Services" items={services} />
-        </div>
+        <SectionBlock title="Services" items={services} />
       </div>
     </section>
   );

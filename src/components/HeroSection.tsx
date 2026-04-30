@@ -37,7 +37,7 @@ const [selectedOption, setSelectedOption] = useState("");
             <a href="#contact-form" className="px-8 py-4 rounded-lg bg-primary text-primary-foreground font-bold text-base glow-md hover:glow-lg transition-all text-center">
               Contact Us Today
             </a>
-            <a href="#services" className="px-8 py-4 rounded-lg border border-border text-foreground font-semibold text-base hover:bg-secondary transition-colors text-center">
+            <a href="#services" className="px-8 py-4 rounded-lg border border-primary text-primary font-bold text-base hover:bg-primary/10 transition-colors">
               What We Offer
             </a>
           </div>
