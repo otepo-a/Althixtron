@@ -5,12 +5,12 @@ import { Link } from "react-router-dom";
 import logo from "@/assets/althix-logo.png";
 
 const navLinks = [
-  { label: "Products", href: "/products" },
-  { label: "Services", href: "#services" },
-  { label: "Why Us", href: "#why-us" },
-  { label: "Gallery", href: "#gallery" },
-  { label: "Testimonials", href: "#testimonials" },
-  { label: "FAQ", href: "#faq" },
+  { label: "Products", href: "/products", type: "route" },
+  { label: "Services", href: "/#services", type: "anchor" },
+  { label: "Why Us", href: "/#why-us", type: "anchor" },
+  { label: "Gallery", href: "/#gallery", type: "anchor" },
+  { label: "Testimonials", href: "/#testimonials", type: "anchor" },
+  { label: "FAQ", href: "/#faq", type: "anchor" },
 ];
 
 const Navbar = () => {
@@ -32,7 +32,7 @@ const Navbar = () => {
         {/* DESKTOP NAV */}
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) =>
-            link.href.startsWith("/") ? (
+            link.type === "route" ? (
               <Link
                 key={link.href}
                 to={link.href}
@@ -52,7 +52,7 @@ const Navbar = () => {
           )}
 
           <a
-            href="#contact"
+            href="/#contact"
             className="px-5 py-2.5 rounded-lg bg-primary text-primary-foreground font-semibold text-sm glow-sm hover:glow-md transition-all"
           >
             Get a Quote
@@ -79,7 +79,7 @@ const Navbar = () => {
           >
             <div className="flex flex-col gap-4 p-6">
               {navLinks.map((link) =>
-                link.href.startsWith("/") ? (
+                link.type === "route" ? (
                   <Link
                     key={link.href}
                     to={link.href}
@@ -101,7 +101,7 @@ const Navbar = () => {
               )}
 
               <a
-                href="#contact"
+                href="/#contact"
                 onClick={() => setOpen(false)}
                 className="px-5 py-2.5 rounded-lg bg-primary text-primary-foreground font-semibold text-sm text-center glow-sm"
               >
