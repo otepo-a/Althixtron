@@ -1,6 +1,9 @@
-﻿import cignus from "../assets/cignus.png";
+import cignus from "../assets/cignus.png";
 import motorola from "../assets/motorola.png";
-import placeholder from "../assets/placeholder.png";
+
+import nx100 from "../assets/products/nx100.png";
+import nx700 from "../assets/products/nx700.png";
+import mtR5 from "../assets/products/motorolaR5.png";
 
 export const productsData = [
   {
@@ -11,9 +14,9 @@ export const productsData = [
         logo: cignus,
         models: [
           {
-            id: "cignus-nx-mini",
-            name: "NX-MINI",
-            image: placeholder,
+            id: "cignus-nx-100",
+            name: "NX-100",
+            image: nx100,
             price: 3250,
             description: "Compact handheld radio with long-range performance.",
             stock: 8,
@@ -21,9 +24,10 @@ export const productsData = [
           {
             id: "cignus-nx-700",
             name: "NX-700",
-            image: placeholder,
+            image: nx700,
             price: 5299,
-            description: "Heavy-duty two-way radio for professional communication.",
+            description:
+              "Heavy-duty two-way radio for professional communication.",
             stock: 5,
           },
         ],
@@ -33,11 +37,12 @@ export const productsData = [
         logo: motorola,
         models: [
           {
-            id: "motorola-mt-100",
-            name: "MT-100",
-            image: placeholder,
+            id: "motorola-R5",
+            name: "MT-R5",
+            image: mtR5,
             price: 4100,
-            description: "Reliable Motorola radio for everyday store and service use.",
+            description:
+              "Reliable Motorola radio for everyday store and service use.",
             stock: 12,
           },
         ],
