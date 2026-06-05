@@ -6,6 +6,8 @@ import lazadaLogo from "../assets/lazada.png";
 import instagramLogo from "../assets/instagram.png";
 import facebookLogo from "../assets/facebook.png";
 
+const shopeeStoreUrl = "https://shopee.ph/shop/1800363460";
+
 const Footer = () => {
   return (
     <footer className="border-t border-border py-12 bg-muted/20">
@@ -85,7 +87,7 @@ const Footer = () => {
 
             {/* Shopee */}
             <a 
-              href="#" 
+              href={shopeeStoreUrl} 
               target="_blank" 
               rel="noopener noreferrer"
               className="flex items-center gap-3 text-sm text-muted-foreground group transition-all hover:text-primary"
