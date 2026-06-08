@@ -160,8 +160,7 @@ export default function ProductsPage() {
   };
 
   const subtotal = cart.reduce((total, item) => total + item.price * item.qty, 0);
-  const shipping = cart.length > 0 ? 150 : 0;
-  const total = subtotal + shipping;
+  const total = subtotal;
 
   const quoteLines = [
     `Quote request from ${customerName || "Guest"}`,
@@ -180,7 +179,6 @@ export default function ProductsPage() {
     ),
     "",
     `Subtotal: ₱${subtotal.toLocaleString()}`,
-    `Shipping: ₱${shipping.toLocaleString()}`,
     `Total: ₱${total.toLocaleString()}`,
     "",
     `Message: ${customerMessage || "No additional notes."}`,
@@ -600,11 +598,6 @@ export default function ProductsPage() {
                   <span>₱{subtotal.toLocaleString()}</span>
                 </div>
 
-                <div className="flex justify-between text-slate-400">
-                  <span>Shipping</span>
-                  <span>₱{shipping.toLocaleString()}</span>
-                </div>
-
                 <div className="border-t border-slate-800 pt-3">
                   <div className="flex justify-between text-lg font-black text-sky-300">
                     <span>Total</span>
@@ -640,10 +633,10 @@ export default function ProductsPage() {
               exit={{ scale: 0.96, y: 18, opacity: 0 }}
               transition={{ duration: 0.2, ease: "easeOut" }}
               onClick={(event) => event.stopPropagation()}
-              className="h-[82vh] w-full max-w-5xl overflow-hidden rounded-3xl border border-slate-800 bg-slate-900 shadow-2xl shadow-black"
+              className="max-h-[90vh] w-full max-w-5xl overflow-y-auto rounded-3xl border border-slate-800 bg-slate-900 shadow-2xl shadow-black lg:h-[82vh] lg:overflow-hidden"
             >
-              <div className="grid h-full gap-0 lg:grid-cols-[0.95fr_1.05fr]">
-                <div className="relative flex h-full items-center justify-center overflow-hidden bg-white p-8">
+              <div className="grid lg:h-full lg:grid-cols-[0.95fr_1.05fr]">
+                <div className="relative flex h-[360px] items-center justify-center overflow-hidden bg-white p-6 sm:h-[420px] lg:h-full lg:p-8">
                   <img
                     src={selectedProduct.image}
                     alt={selectedProduct.name}
@@ -655,7 +648,7 @@ export default function ProductsPage() {
                   </span>
                 </div>
 
-                <div className="flex h-full flex-col overflow-hidden p-6">
+                <div className="flex flex-col overflow-hidden p-6 lg:h-full">
                   <div className="shrink-0">
                     <div className="flex items-start justify-between gap-4">
                       <div>
@@ -687,7 +680,7 @@ export default function ProductsPage() {
                     </div>
                   </div>
 
-                  <div className="mt-6 min-h-0 flex-1 overflow-y-auto pr-3 [scrollbar-color:#38bdf8_#0f172a] [scrollbar-width:thin]">
+                  <div className="mt-6 max-h-[260px] overflow-y-auto pr-3 [scrollbar-color:#38bdf8_#0f172a] [scrollbar-width:thin] sm:max-h-[320px] lg:min-h-0 lg:flex-1 lg:max-h-none">
                     {selectedProduct.specs && (
                       <div className="rounded-2xl border border-slate-800 bg-slate-950/70 p-5">
                         <h3 className="text-sm font-black uppercase tracking-[0.16em] text-sky-300">
@@ -818,11 +811,6 @@ export default function ProductsPage() {
                     <div className="flex justify-between text-slate-400">
                       <span>Subtotal</span>
                       <span>₱{subtotal.toLocaleString()}</span>
-                    </div>
-
-                    <div className="flex justify-between text-slate-400">
-                      <span>Shipping</span>
-                      <span>₱{shipping.toLocaleString()}</span>
                     </div>
 
                     <div className="flex justify-between text-lg font-black text-sky-300">
