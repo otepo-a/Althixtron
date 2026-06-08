@@ -55,6 +55,7 @@ export default function ProductsPage() {
   const [customerMessage, setCustomerMessage] = useState("");
   const [emailError, setEmailError] = useState("");
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+  const [cartAlert, setCartAlert] = useState("");
 
   const productGridRef = useRef<HTMLDivElement>(null);
 
@@ -141,6 +142,12 @@ export default function ProductsPage() {
     } else {
       setCart([...cart, { ...product, qty: 1 }]);
     }
+
+    setCartAlert(`${product.name} added to quote successfully`);
+
+    window.setTimeout(() => {
+      setCartAlert("");
+    }, 2200);
   };
 
   const updateQty = (productId: string, qty: number) => {
@@ -212,6 +219,29 @@ export default function ProductsPage() {
   return (
     <div className="min-h-screen bg-[#050914] text-slate-100">
       <Navbar />
+
+      <AnimatePresence>
+        {cartAlert && (
+          <motion.div
+            initial={{ opacity: 0, y: -20, scale: 0.98 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -20, scale: 0.98 }}
+            transition={{ duration: 0.2, ease: "easeOut" }}
+            className="fixed left-4 right-4 top-24 z-[80] rounded-2xl border border-emerald-400/30 bg-slate-950/95 px-4 py-4 text-sm text-white shadow-2xl shadow-black/40 backdrop-blur sm:left-auto sm:right-6 sm:w-[360px]"
+          >
+            <div className="flex items-start gap-3">
+              <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-emerald-500 text-white">
+                ✓
+              </div>
+
+              <div>
+                <p className="font-black text-emerald-300">Added to Quote</p>
+                <p className="mt-1 text-slate-300">{cartAlert}</p>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       <main className="pt-20">
         <section className="relative overflow-hidden border-b border-blue-500/20 bg-[radial-gradient(circle_at_top_right,_rgba(14,165,233,0.35),_transparent_35%),linear-gradient(135deg,_#070b14,_#0b1220_45%,_#0f2b46)]">
