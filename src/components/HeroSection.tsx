@@ -146,7 +146,7 @@ const [selectedOption, setSelectedOption] = useState("");
                 >
                   <option value="">Select a service</option>
                   <option>Structured Cabling</option>
-                  <option>Two-Way Radio Systems</option>
+                  {/* <option>Two-Way Radio Systems</option> */}
                   <option>Data & Command Network</option>
                   <option>Solar Technology</option>
                   <option>FDAS</option>
@@ -174,7 +174,7 @@ const [selectedOption, setSelectedOption] = useState("");
                   required
                 >
                   <option value="">Select a product</option>
-                  <option>Two-Way Radios</option>
+                  {/* <option>Two-Way Radios</option> */}
                   <option>CCTV Cameras</option>
                   <option>NVR / DVR</option>
                   <option>Routers / Switches</option>
