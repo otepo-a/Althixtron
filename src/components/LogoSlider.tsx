@@ -38,24 +38,7 @@ const logos = [
 const repeatedLogos = [...logos, ...logos, ...logos, ...logos, ...logos, ...logos];
 
 export default function LogoSlider() {
-  return (
-    <section className="w-full space-y-2 overflow-hidden bg-[#070b12] py-2">
-      <div className="mb-8 text-center">
-        <p className="text-xs font-bold uppercase tracking-[0.15em] text-[#1ea7ff]">
-          TRUSTED TECHNOLOGY PARTNERS
-        </p>
-
-        <h3 className="mt-1 text-3xl font-bold leading-tight md:text-[36px]">
-          <span className="text-white">Brands </span>
-          <span className="bg-gradient-to-r from-[#1ea7ff] to-[#00d4ff] bg-clip-text text-transparent">
-            We Work With
-          </span>
-        </h3>
-      </div>
-      <LogoRow reverse={false} />
-      <LogoRow reverse={true} />
-    </section>
-  );
+  return null;
 }
 
 function LogoRow({ reverse }: { reverse: boolean }) {
