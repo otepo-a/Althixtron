@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { motion, useAnimationControls } from "framer-motion";
 import atxlogo from "../assets/atx.png";
 import motorola from "../assets/motorola.png";
@@ -35,13 +36,43 @@ const logos = [
   },
 ];
 
-const repeatedLogos = [...logos, ...logos, ...logos, ...logos, ...logos, ...logos];
+const repeatedLogos = [
+  ...logos,
+  ...logos,
+  ...logos,
+  ...logos,
+  ...logos,
+  ...logos,
+];
 
 export default function LogoSlider() {
-  return null;
+  return (
+    <section className="relative overflow-hidden border-y border-slate-800 bg-[#080d16] py-16">
+      <div className="mx-auto max-w-7xl px-4 text-center">
+        <p className="text-sm font-medium uppercase tracking-[0.25em] text-sky-400">
+          Trusted Partner Brands
+        </p>
+
+        <h2 className="mt-3 text-3xl font-semibold tracking-normal text-white md:text-4xl">
+          Brands <span className="text-sky-400">We Work With</span>
+        </h2>
+      </div>
+
+      <div className="mt-10 space-y-4">
+        <LogoRow reverse={false} faded={false} />
+        <LogoRow reverse={true} faded={true} />
+      </div>
+    </section>
+  );
 }
 
-function LogoRow({ reverse }: { reverse: boolean }) {
+function LogoRow({
+  reverse,
+  faded,
+}: {
+  reverse: boolean;
+  faded: boolean;
+}) {
   const controls = useAnimationControls();
 
   const startAutoScroll = () => {
@@ -55,6 +86,10 @@ function LogoRow({ reverse }: { reverse: boolean }) {
     });
   };
 
+  useEffect(() => {
+    startAutoScroll();
+  }, []);
+
   return (
     <div
       className="overflow-hidden [mask-image:linear-gradient(to_right,transparent,#000_10%,#000_90%,transparent)]"
@@ -62,17 +97,14 @@ function LogoRow({ reverse }: { reverse: boolean }) {
       onMouseLeave={startAutoScroll}
     >
       <motion.div
-        className="group flex w-max cursor-grab items-center gap-2 active:cursor-grabbing"
+        className="flex w-max cursor-grab items-center gap-2 active:cursor-grabbing"
         animate={controls}
         initial={{ x: reverse ? "-50%" : "0%" }}
         drag="x"
         dragElastic={0.08}
-        dragMomentum={true}
+        dragMomentum
         onDragStart={() => controls.stop()}
         onDragEnd={startAutoScroll}
-        onHoverStart={() => controls.stop()}
-        onHoverEnd={startAutoScroll}
-        onViewportEnter={startAutoScroll}
       >
         {repeatedLogos.map((logo, index) => (
           <div
@@ -83,19 +115,19 @@ function LogoRow({ reverse }: { reverse: boolean }) {
               src={logo.src}
               alt={logo.alt}
               draggable={false}
-              className="
-                max-h-[45px] max-w-[150px] object-contain
-                select-none
+              className={`
+                max-h-[45px] max-w-[150px] select-none object-contain
                 transition duration-300
-
-                group-hover:grayscale
-                group-hover:opacity-40
-
-                hover:!grayscale-0
+                ${
+                  faded
+                    ? "opacity-25 grayscale"
+                    : "opacity-100 grayscale-0"
+                }
                 hover:!opacity-100
+                hover:!grayscale-0
                 hover:scale-110
                 hover:drop-shadow-[0_0_18px_rgba(56,189,248,0.85)]
-              "
+              `}
             />
           </div>
         ))}

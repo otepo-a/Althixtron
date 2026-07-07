@@ -24,17 +24,41 @@ const Footer = () => {
               className="h-[50px] w-[110px]" 
             />
             <p className="text-muted-foreground text-sm leading-relaxed">
-              Althixtron Electronics Supply and Services Inc. — your trusted partner for all electronics needs in Lucena City, Quezon.
+              Althixtron Electronics Supply and Services Inc. — your trusted provider of electronics supplies, ICT solutions, CCTV services, computer supplies, and two way radio products in Lucena City, Quezon.
             </p>
           </div>
 
           {/* Column 2 */}
           <div className="flex flex-col gap-3">
-            <h4 className="font-bold text-sm">Quick Links</h4>
-            <a href="#services" className="text-sm text-muted-foreground hover:text-primary">Services</a>
-            <a href="#why-us" className="text-sm text-muted-foreground hover:text-primary">Why Us</a>
-            <a href="#gallery" className="text-sm text-muted-foreground hover:text-primary">Gallery</a>
-            <a href="#faq" className="text-sm text-muted-foreground hover:text-primary">FAQ</a>
+            <h4 className="font-bold text-sm">Products</h4>
+
+            <a
+              href="/products"
+              className="text-sm text-muted-foreground hover:text-primary"
+            >
+              All Products
+            </a>
+
+            <a
+              href="/two-way-radio"
+              className="text-sm text-muted-foreground hover:text-primary"
+            >
+              Two Way Radio
+            </a>
+
+            <a
+              href="/two-way-radio"
+              className="text-sm text-muted-foreground hover:text-primary"
+            >
+              Cignus Two Way Radio
+            </a>
+
+            <a
+              href="/products"
+              className="text-sm text-muted-foreground hover:text-primary"
+            >
+              Computer Supplies
+            </a>
           </div>
 
           {/* Column 3 */}

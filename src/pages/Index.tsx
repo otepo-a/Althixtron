@@ -9,12 +9,14 @@ import MapSection from "@/components/MapSection";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 import LogoSlider from "@/components/LogoSlider";
+import FeaturedProductsSection from "@/components/FeaturedProductsSection";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
       <HeroSection />
+      <FeaturedProductsSection />
       <LogoSlider />
       <ServicesSection />
       <WhyUsSection />

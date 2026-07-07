@@ -12,7 +12,7 @@ const reasons = [
 
 const WhyUsSection = () => {
   return (
-    <section id="why-us" className="py-24">
+    <section id="about" className="py-24">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

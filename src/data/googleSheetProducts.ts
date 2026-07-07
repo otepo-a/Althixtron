@@ -22,6 +22,16 @@ const toTitleCase = (text: string) => {
     .join(" ");
 };
 
+const normalizeCategory = (category: string) => {
+  const formattedCategory = toTitleCase(category);
+
+  if (formattedCategory === "Radio") {
+    return "Two Way Radio";
+  }
+
+  return formattedCategory;
+};
+
 const cleanMoney = (value: string) => {
   return Number(String(value || "").replace(/[₱,\s]/g, "")) || 0;
 };
@@ -124,7 +134,7 @@ export const fetchProductsFromGoogleSheet = async () => {
         id,
         name,
         brand: brand ? toTitleCase(brand) : "No Brand",
-        category: category ? toTitleCase(category) : "Uncategorized",
+        category: category ? normalizeCategory(category) : "Uncategorized",
         price: cleanMoney(price),
         stock: cleanNumber(stock),
         specs: specs || "",

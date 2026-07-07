@@ -5,12 +5,10 @@ import { Link } from "react-router-dom";
 import logo from "@/assets/althix-logo.png";
 
 const navLinks = [
+  { label: "Home", href: "/", type: "route" },
   { label: "Products", href: "/products", type: "route" },
   { label: "Services", href: "/#services", type: "anchor" },
-  { label: "Why Us", href: "/#why-us", type: "anchor" },
-  { label: "Gallery", href: "/#gallery", type: "anchor" },
-  { label: "Testimonials", href: "/#testimonials", type: "anchor" },
-  { label: "FAQ", href: "/#faq", type: "anchor" },
+  { label: "About", href: "/#about", type: "anchor" },
 ];
 
 const Navbar = () => {

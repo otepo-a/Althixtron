@@ -17,7 +17,7 @@ const getCignusImage = (fileName: string) => {
 const cignusModels = [
   {
     id: "cignus-nx-100",
-    name: "NX-100",
+    name: "Cignus NX-100 Two Way Radio",
     imageFile: "nx-100.png",
     price: 3250,
     description: "Compact Cignus handheld radio for reliable communication.",
@@ -25,7 +25,7 @@ const cignusModels = [
   },
   {
     id: "cignus-nx-200",
-    name: "NX-200",
+   name: "Cignus NX-200 Two Way Radio",
     imageFile: "nx-200.png",
     price: 3899,
     description: "Durable Cignus two-way radio for daily business use.",
@@ -33,7 +33,7 @@ const cignusModels = [
   },
   {
     id: "cignus-nx-300",
-    name: "NX-300",
+    name: "Cignus NX-300 Two Way Radio",
     imageFile: "nx-300.png",
     price: 4299,
     description: "Professional Cignus radio with clear audio performance.",
@@ -41,7 +41,7 @@ const cignusModels = [
   },
   {
     id: "cignus-nx-700",
-    name: "NX-700",
+    name: "Cignus NX-700 Two Way Radio",
     imageFile: "nx-700.png",
     price: 5299,
     description: "Heavy-duty two-way radio for professional communication.",
@@ -49,7 +49,7 @@ const cignusModels = [
   },
   {
     id: "cignus-nx-slim",
-    name: "NX-SLIM",
+    name: "Cignus NX-SLIM Two Way Radio",
     imageFile: "nx-slim.png",
     price: 3499,
     description: "Slim and lightweight Cignus radio for easy everyday use.",
@@ -57,7 +57,7 @@ const cignusModels = [
   },
   {
     id: "cignus-uv-88",
-    name: "UV-88",
+    name: "Cignus UV-88 Two Way Radio",
     imageFile: "uv-88.png",
     price: 2999,
     description: "Portable Cignus radio for flexible communication needs.",
@@ -67,7 +67,7 @@ const cignusModels = [
 
 export const productsData = [
   {
-    name: "Radio",
+    name: "Two Way Radio",
     brands: [
       {
         name: "Cignus",
